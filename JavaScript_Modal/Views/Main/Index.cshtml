@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="container">
+    <div class="row">
+        <input type="button" class="btn btn-danger" id="btnshow" value="show" />
+        
+            <div class="modal-dialog"  id="modalid" >
+                <div class="modal-content" style="width:400px">
+                    <div class="modal-header">
+                        <button class="close" data-dissmiss="modal" id="mclose" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModal-label">Demo Dialog</h4>
+                    </div>
+                    
+                    
+                    <div class="modal-body">
+                     
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="form-control-static">Username</label>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <input type="text" name="usename" id="username" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="form-control-static">Password</label>
+                                </div>
+                                 
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="password" id="password" />
+                                </div>
+                            </div>
+
+                        </div>        
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <input type="button" data-dissmiss="modal" class="btn btn-primary" name="btnsave" id="btnsave" value="Save" />
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+   
+   
+    $(document).ready(function () {
+
+        $('#modalid').hide();
+        $('#mclose').click(function () {
+            $('#modalid').fadeOut();
+        });
+        $('#btnshow').click(function () {
+
+            $('#modalid').fadeIn();
+
+        });
+
+        $('#btnsave').click(function () {
+
+            $('#modalid').fadeOut();
+            
+            alert("Inserted...!");
+
+        });
+
+    });
+
+
+</script>
+
